@@ -1,0 +1,10 @@
+{
+  "name": "AwesomeProject",
+  "displayName": "AwesomeProject",
+  "plugins" : [
+    "@config-plugins/react-native-pdf",
+    "@config-plugins/react-native-blob-util",
+    "react-native-safe-area-context"
+  ]
+
+}

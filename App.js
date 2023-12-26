@@ -1,19 +1,13 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React, {useEffect} from 'react';
-import {StyleSheet, Dimensions, View, Text} from 'react-native';
+import {createStackNavigator} from '@react-navigation/stack';
+import {NavigationContainer} from '@react-navigation/native';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
-import {UserProvider} from './context/userProvider';
-import Navigation from './navigation/Navigation';
-import {NavigationContainer} from '@react-navigation/native';
+import {UserProvider} from './context/UseContext';
+import Router from './Router';
+const Stack = createStackNavigator();
 
-function App() {
+const App = () => {
   const initial = async () => {
     const ref = firestore().collection('users');
 
@@ -40,25 +34,15 @@ function App() {
     initial();
   }, []);
 
+ 
+
   return (
-    <View style={styles.container}>
-      <NavigationContainer>
-        <UserProvider>
-          <Navigation />
-        </UserProvider>
+    <UserProvider>
+      <NavigationContainer independent={true}>
+        <Router />
       </NavigationContainer>
-    </View>
+    </UserProvider>
   );
-}
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  pdf: {
-    flex: 1,
-    width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height,
-  },
-});
+};
 
 export default App;

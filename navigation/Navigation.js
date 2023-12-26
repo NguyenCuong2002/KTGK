@@ -5,7 +5,7 @@ import LoginScreen from '../screens/LoginScreen';
 import HomeScreen from '../screens/HomeScreen';
 import AddService from '../screens/AddService';
 import ServiceList from '../components/ServiceList';
-import { UserContext } from '../context/userProvider';
+import { UserContext } from '../context/UseContext';
 import ServiceDetail from '../screens/ServiceDetail';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Update from '../screens/Update';

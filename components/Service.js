@@ -4,7 +4,7 @@ import {List} from 'react-native-paper';
 import firestore from '@react-native-firebase/firestore';
 import {useNavigation} from '@react-navigation/native';
 import Entypo from 'react-native-vector-icons/Entypo';
-import {UserProvider, UserContext} from '../context/userProvider';
+import {UserProvider, UserContext} from '../context/UseContext';
 
 
 
